@@ -1,0 +1,7 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+nav{
+    background-color: rgb(121, 255, 255);
+}
+p{
+    font-weight: 600;
+}
