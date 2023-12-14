@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DBcontroller;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ShowYourselfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,13 @@ use App\Http\Controllers\PublicController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//routing generico
 Route::get('/', [PublicController::class, 'Home'])->name('welcome');
 Route::get('/chi-siamo',[PublicController::class, 'Personale'])->name('personale');
 Route::get('/contattaci',[PublicController::class,'Contatti'])->name('contatta');
 Route::get('/grazie',[PublicController::class,'Grazie'])->name('grazie');
-
+//post invio mail e invio dati sul DB
 Route::post('/invia-mail',[PublicController::class,'InviaMail'])->name('invioForm');
+//routing immagini
+Route::get('chi-sei',[DBcontroller::class,'image'])->name('chiSei');
+Route::post('/invia-img',[ShowYourselfController::class,''])->name('image.submit');

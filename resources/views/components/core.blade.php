@@ -23,6 +23,9 @@
               <li class="nav-item">
                 <a href="{{route('contatta')}}" class="nav-link"><p>Contattaci</p></a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('chiSei')}}" class="nav-link"><p>Mostraci chi sei</p></a>
+              </li>
             </ul>
           </div>
         </div>

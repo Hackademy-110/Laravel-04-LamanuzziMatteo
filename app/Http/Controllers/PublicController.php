@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\standardMail;
+use App\Models\formcontatti;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\MailController;
@@ -23,6 +24,10 @@ class PublicController extends Controller
         $name=$request->name;
         $text=$request->contenuto;
         Mail::to($mail)->send(new standardMail());
+        $form= new formcontatti();
+        $form->email=$request->email;
+        $form->contenuto=$request->contenuto;
+        $form->save();
         return redirect(route('grazie'));
     }
     public function Grazie(){
