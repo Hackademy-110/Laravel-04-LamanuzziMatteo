@@ -33,4 +33,7 @@ class PublicController extends Controller
     public function Grazie(){
         return view('Grazie');
     }
+    public function Login(){
+        return view('Autentication');
+    }
 }
